@@ -9,12 +9,12 @@ import {Button} from '../components/Button'
 import '../styles/auth.scss'
 
 export function Home(){
+    
     const navigate = useNavigate();
 
     function navigateToNewRoom(){
         navigate('/rooms/new')
     }
-
     return(
         <div id='page-auth'>
              <aside>
@@ -25,17 +25,15 @@ export function Home(){
              <main>
                  <div className='main-content'>
                      <img src={logo} alt="letmeask" />
-                     <button className='create-room' >
-                       <img src={googleIconImg} alt="Logo do Google" onClick={ navigateToNewRoom }/>
+                     <button className='create-room' onClick={ navigateToNewRoom }>
+                       <img src={googleIconImg} alt="Logo do Google" />
                        Crie sua sala com o Google
                      </button>
                      <div className='separator'>ou entre em uma sala</div>
                      <form action="">
                          <input type="text" placeholder='Digite o código da sala ' />
                          <Button type='submit'>Entrar na sala</Button>
-
                      </form>
-                      
                  </div>
              </main>
         </div>
