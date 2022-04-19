@@ -1,3 +1,4 @@
+import {useContext} from 'react';
 import { Navigate, useNavigate } from 'react-router-dom'
 
 import { auth, firebase } from '../services/firebase'
@@ -6,12 +7,16 @@ import illustration from '../assets/images/illustration.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 import logo from '../assets/images/logo.svg'
 
-import {Button} from '../components/Button'
+import {Button} from '../components/Button';
+
+import {TestContext} from '../App'
 
 import '../styles/auth.scss'
 
 export function Home(){
     const navigate = useNavigate();
+    const { value, setValue } = useContext(TestContext);
+
 
     function handleCreateRoom(){
         const provider = new firebase.auth.GoogleAuthProvider();
