@@ -12,12 +12,12 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
         <TestContext.Provider value={{value, setValue}}>
+      <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/rooms/new" element={<NewRoom/>}/>
-        </TestContext.Provider>
       </Routes>
+        </TestContext.Provider>
     </BrowserRouter>
   );
 }
