@@ -1,8 +1,5 @@
 import { Navigate, useNavigate } from 'react-router-dom'
 
-import { useContext } from 'react'
-import { AuthContext } from '../App'
-
 import illustration from '../assets/images/illustration.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 import logo from '../assets/images/logo.svg'
@@ -10,10 +7,11 @@ import logo from '../assets/images/logo.svg'
 import {Button} from '../components/Button';
 
 import '../styles/auth.scss'
+import { useAuth } from '../hooks/useAuth'
 
 export function Home(){
     const navigate = useNavigate();
-    const { signInWithGoogle,user } = useContext(AuthContext);
+    const { signInWithGoogle,user } = useAuth();
 
 
     async function handleCreateRoom(){
