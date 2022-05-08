@@ -21,7 +21,7 @@ type User ={
 export function AuthContextProvider(props: AuthContextProviderProps){
 
     const [user, setUser] = useState<User>();
-  useEffect(()=> {
+      useEffect(()=> {
 
     const unsubscribe= auth.onAuthStateChanged( user =>{
       if (user){
