@@ -1,6 +1,6 @@
-export const AuthContext = createContext({}as AuthContextType);
 import { createContext, ReactNode, useState, useEffect } from "react";
 import { auth, firebase  } from "../services/firebase"
+export const AuthContext = createContext({}as AuthContextType);
 
 type User ={
     id: string;
@@ -59,6 +59,7 @@ export function AuthContextProvider(props: AuthContextProviderProps){
     })
      }
   };
+  
 
     return(
         <AuthContext.Provider value={{user, signInWithGoogle}}>

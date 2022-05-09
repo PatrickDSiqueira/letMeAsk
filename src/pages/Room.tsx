@@ -1,7 +1,6 @@
-import { FormEvent, useDeferredValue, useEffect } from 'react';
+import { FormEvent, useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-
 
 import logoImg from '../assets/images/logo.svg'
 import { Button } from '../components/Button';
@@ -10,6 +9,7 @@ import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
 
 import '../styles/room.scss';
+
 
 type FirebaseQuestions = Record<string, {
     author: {
@@ -21,6 +21,17 @@ type FirebaseQuestions = Record<string, {
     isHighlighted: boolean;
   }>
 
+type Question ={
+    id:string;
+    author: {
+        name: string;
+        avatar: string;
+      }
+      content: string;
+      isAnswered: boolean;
+      isHighlighted: boolean;
+}
+
 
 type RoomParams ={
     id : string;
@@ -28,22 +39,22 @@ type RoomParams ={
 
 export function Room (){
     const  user  = useAuth;
+    
     const params = useParams<RoomParams>();
     const [newQuestion, setNewQuestion] = useState('');
+    const [question, setQuestion] = useState<Question[]>([]);
+    const [title, setTitle] = useState('');
+
     const roomId = params.id;
 
     useEffect(()=>{
 
         const roomRef = database.ref(`rooms/${roomId}`);
 
-        roomRef.once('value', room => { 
+        roomRef.on('value', room => { 
             const databaseRoom = room.val();
-        
             
             const firebaseQuestion: FirebaseQuestions = databaseRoom.questions ?? {};
-
-            
-             
             
             const parsedQuestions = Object.entries(firebaseQuestion).map(([key, value]) => {
                 return{
@@ -54,6 +65,9 @@ export function Room (){
                     isAnswered: value.isAnswered,
                 }
             })
+            setTitle(databaseRoom.title);
+            setQuestion(parsedQuestions);
+            
             
         })
     },[roomId]);
@@ -92,8 +106,8 @@ export function Room (){
 
             <main>
                 <div className="room-title">
-                    <h1>Sala Teste</h1>
-                    <span>3 Perguntas</span>
+                    <h1>Sala {title}</h1>
+                    {question.length > 0 &&  <span>{question.length} Pergunta(s)</span>}
                 </div>
                 <form onSubmit={handleSendQuestion}>
                     <textarea placeholder='O que Você quer perguntar??'
@@ -111,6 +125,7 @@ export function Room (){
                         <Button type='submit' disabled={!user}>Enviar pergunta</Button>
                     </div>
                 </form>
+                {JSON.stringify(question)}
             </main>
         </div>
     );
