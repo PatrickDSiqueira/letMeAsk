@@ -46,7 +46,7 @@ export function AuthContextProvider(props: AuthContextProviderProps){
   async function signInWithGoogle(){
     const provider = new firebase.auth.GoogleAuthProvider();
     const result = await auth.signInWithPopup(provider);
-
+    
   if (result.user){
       const { displayName, photoURL, uid } = result.user;
     if ( !displayName || !photoURL ){
@@ -62,7 +62,7 @@ export function AuthContextProvider(props: AuthContextProviderProps){
   
 
     return(
-        <AuthContext.Provider value={{user, signInWithGoogle}}>
+        <AuthContext.Provider value={{signInWithGoogle,user}}>
             {props.children}
         </AuthContext.Provider>
     );
