@@ -26,7 +26,10 @@ O intuito principal é a organização de perguntas a serem respondidas durante 
 
 Este é um projeto desenvolvido durante a **[Next Level Week Together](https://nextlevelweek.com/)** da Rocketseat.
 
-## Principais Aprendizados
+## 📚 Principais Aprendizados
+ - Primeiro contato com o React.
+ - Aprofudamentos sobre os serviços do Firebase.
+ - Boas práticas de programação.
 
 ---
 
