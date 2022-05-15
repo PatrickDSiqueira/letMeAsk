@@ -1,9 +1,6 @@
 
   ![PrintLetMeAsk](https://raw.githubusercontent.com/PatrickDSiqueira/letMeAsk/master/src/assets/images/Capturar.PNG)
-
   - - - 
-<br>
-
 ## 🧪 Tecnologias
 <br/>
 
@@ -16,10 +13,7 @@ Nesse projeto foi usadas a as seguintes Tecnologias:
 ## 🚀 Disponibilazação
 <br/>
 O app estará disponível pelo endereço :
-<br/>
-<br/>
 - [https://letmeask-f1e3b.firebaseapp.com/](https://reactjs.org)
-<br/>
 - [https://letmeask-f1e3b.web.app/](https://letmeask-f1e3b.web.app/)
 
 
