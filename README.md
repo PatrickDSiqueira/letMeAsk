@@ -6,6 +6,7 @@
 
 Nesse projeto foi usadas a as seguintes Tecnologias:
 
+
 - [React](https://reactjs.org)
 - [Firebase](https://firebase.google.com/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -13,8 +14,11 @@ Nesse projeto foi usadas a as seguintes Tecnologias:
 ## 🚀 Disponibilazação
 <br/>
 O app estará disponível pelo endereço :
-- [https://letmeask-f1e3b.firebaseapp.com/] (letmeask-f1e3b.firebaseapp.com)
-- [https://letmeask-f1e3b.web.app/] (letmeask-f1e3b.web.app)
+<br/>
+
+- [letmeask-f1e3b.firebaseapp.com](https://letmeask-f1e3b.firebaseapp.com/)
+
+- [letmeask-f1e3b.web.app](https://letmeask-f1e3b.web.app/)
 
 
 ## 💻 Projeto
