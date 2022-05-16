@@ -13,8 +13,8 @@ Nesse projeto foi usadas a as seguintes Tecnologias:
 ## 🚀 Disponibilazação
 <br/>
 O app estará disponível pelo endereço :
-- [https://letmeask-f1e3b.firebaseapp.com/](https://reactjs.org)
-- [https://letmeask-f1e3b.web.app/](https://letmeask-f1e3b.web.app/)
+- [https://letmeask-f1e3b.firebaseapp.com/] (letmeask-f1e3b.firebaseapp.com)
+- [https://letmeask-f1e3b.web.app/] (letmeask-f1e3b.web.app)
 
 
 ## 💻 Projeto
